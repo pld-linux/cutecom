@@ -1,12 +1,12 @@
 Summary:	A graphical serial terminal
 Summary(pl):	Graficzny terminal szeregowy
 Name:		cutecom
-Version:	0.13.1
+Version:	0.13.2
 Release:	0.1
 License:	GPL v2
 Group:		Applications/Communications
 Source0:	http://cutecom.sourceforge.net/%{name}-%{version}.tar.gz
-# Source0-md5:	dc1c75f9b55993b9d9426e17c11915a1
+# Source0-md5:	d115eb003ef8b119503050da0b4486e0
 URL:		http://cutecom.sourceforge.net
 BuildRequires:	qmake
 BuildRequires:	qt-devel
