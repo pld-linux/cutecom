@@ -25,7 +25,7 @@ terminala do komunikacji ze swoimi urz±dzeniami.
 %setup -q
 
 %build
-./configure
+%configure
 %{__make} \
 	QTDIR=%{_prefix}
 
