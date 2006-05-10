@@ -10,6 +10,7 @@ Source0:	http://cutecom.sourceforge.net/%{name}-%{version}.tar.gz
 URL:		http://cutecom.sourceforge.net
 BuildRequires:	qmake
 BuildRequires:	qt-devel
+BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,11 +22,13 @@ talk to their devices.
 Cutecom to graficzny terminal szeregowy podobny do minicoma. Jest
 przeznaczony g³ównie dla twórców sprzêtu i innych ludzi potrzebuj±cych
 terminala do komunikacji ze swoimi urz±dzeniami.
+
 %prep
 %setup -q
 
 %build
-%configure
+qmake \
+	QMAKE_CXXFLAGS_RELEASE="%{rpmcxxflags}"
 %{__make} \
 	QTDIR=%{_prefix}
 
