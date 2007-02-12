@@ -1,5 +1,5 @@
 Summary:	A graphical serial terminal
-Summary(pl):	Graficzny terminal szeregowy
+Summary(pl.UTF-8):   Graficzny terminal szeregowy
 Name:		cutecom
 Version:	0.14.0
 Release:	0.1
@@ -18,10 +18,10 @@ Cutecom is a graphical serial terminal, like minicom. It is aimed
 mainly at hardware developers or other people who need a terminal to
 talk to their devices.
 
-%description -l pl
+%description -l pl.UTF-8
 Cutecom to graficzny terminal szeregowy podobny do minicoma. Jest
-przeznaczony g³ównie dla twórców sprzêtu i innych ludzi potrzebuj±cych
-terminala do komunikacji ze swoimi urz±dzeniami.
+przeznaczony gÅ‚Ã³wnie dla twÃ³rcÃ³w sprzÄ™tu i innych ludzi potrzebujÄ…cych
+terminala do komunikacji ze swoimi urzÄ…dzeniami.
 
 %prep
 %setup -q
