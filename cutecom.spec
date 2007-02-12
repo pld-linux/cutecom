@@ -1,5 +1,5 @@
 Summary:	A graphical serial terminal
-Summary(pl.UTF-8):   Graficzny terminal szeregowy
+Summary(pl.UTF-8):	Graficzny terminal szeregowy
 Name:		cutecom
 Version:	0.14.0
 Release:	0.1
