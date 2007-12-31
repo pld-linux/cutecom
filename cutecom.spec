@@ -25,7 +25,7 @@ terminala do komunikacji ze swoimi urządzeniami.
 
 %prep
 %setup -q
-echo "Categories=Qt;Utility;" >> ./cutecom.desktop
+echo "Categories=Qt;TerminalEmulator;" >> ./cutecom.desktop
 
 %build
 qmake \
