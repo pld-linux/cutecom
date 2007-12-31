@@ -25,14 +25,13 @@ terminala do komunikacji ze swoimi urządzeniami.
 
 %prep
 %setup -q
+echo "Categories=Qt;Utility;" >> ./cutecom.desktop
 
 %build
 qmake \
 	QMAKE_CXXFLAGS_RELEASE="%{rpmcxxflags}"
 %{__make} \
 	QTDIR=%{_prefix}
-
-echo "Categories=Qt;Utility;" >> ./cutecom.desktop
 
 %install
 rm -rf $RPM_BUILD_ROOT
