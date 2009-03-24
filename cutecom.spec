@@ -1,15 +1,16 @@
 Summary:	A graphical serial terminal
 Summary(pl.UTF-8):	Graficzny terminal szeregowy
 Name:		cutecom
-Version:	0.14.1
-Release:	2
+Version:	0.20.0
+Release:	1
 License:	GPL v2
 Group:		Applications/Communications
 Source0:	http://cutecom.sourceforge.net/%{name}-%{version}.tar.gz
-# Source0-md5:	6e6057b82cbe086806c6d66a1b48c753
-URL:		http://cutecom.sourceforge.net
-BuildRequires:	qmake
-BuildRequires:	qt-devel
+# Source0-md5:	a42394c3a29a2dc30edab721469f5eee
+URL:		http://cutecom.sourceforge.net/
+Patch0:		%{name}-man_path.patch
+BuildRequires:	cmake > 2.4.3
+BuildRequires:	qt4-build
 BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,19 +26,22 @@ terminala do komunikacji ze swoimi urządzeniami.
 
 %prep
 %setup -q
+%patch0 -p1
+
 echo "Categories=Qt;TerminalEmulator;" >> ./cutecom.desktop
 
 %build
-qmake \
-	QMAKE_CXXFLAGS_RELEASE="%{rpmcxxflags}"
-%{__make} \
-	QTDIR=%{_prefix}
+%cmake \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir}}
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 
-install cutecom $RPM_BUILD_ROOT%{_bindir}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install cutecom.desktop $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
@@ -45,6 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog README
-%attr(755,root,root) %{_bindir}/*
+%doc Changelog README TODO
+%attr(755,root,root) %{_bindir}/cutecom
 %{_desktopdir}/*.desktop
+%{_mandir}/man1/*.1*
