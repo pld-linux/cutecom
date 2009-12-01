@@ -7,10 +7,14 @@ License:	GPL v2
 Group:		Applications/Communications
 Source0:	http://cutecom.sourceforge.net/%{name}-%{version}.tar.gz
 # Source0-md5:	a42394c3a29a2dc30edab721469f5eee
-URL:		http://cutecom.sourceforge.net/
 Patch0:		%{name}-man_path.patch
+URL:		http://cutecom.sourceforge.net/
+BuildRequires:	Qt3Support-devel
+BuildRequires:	QtCore-devel
+BuildRequires:	QtGui-devel
 BuildRequires:	cmake > 2.4.3
 BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
