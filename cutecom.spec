@@ -1,13 +1,12 @@
 Summary:	A graphical serial terminal
 Summary(pl.UTF-8):	Graficzny terminal szeregowy
 Name:		cutecom
-Version:	0.20.0
+Version:	0.22.0
 Release:	1
 License:	GPL v2
 Group:		Applications/Communications
 Source0:	http://cutecom.sourceforge.net/%{name}-%{version}.tar.gz
-# Source0-md5:	a42394c3a29a2dc30edab721469f5eee
-Patch0:		%{name}-man_path.patch
+# Source0-md5:	dd85ceecf5a60b4d9e4b21a338920561
 URL:		http://cutecom.sourceforge.net/
 BuildRequires:	Qt3Support-devel
 BuildRequires:	QtCore-devel
@@ -30,7 +29,6 @@ terminala do komunikacji ze swoimi urządzeniami.
 
 %prep
 %setup -q
-%patch0 -p1
 
 echo "Categories=Qt;TerminalEmulator;" >> ./cutecom.desktop
 
